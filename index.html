@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Горбачева Недвижимость — Москва и Московская область</title>
+
+<meta name="description" content="Горбачева Недвижимость — продажа, покупка и аренда недвижимости в Москве и Московской области.">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: #f7f8fa;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e8eaf0;
+}
+
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #16233d;
+}
+
+.logo span {
+    color: #b48a45;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #b48a45;
+}
+
+.header-phone {
+    font-weight: 700;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(9,18,38,.88), rgba(9,18,38,.38)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #d7b273;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 650px;
+    margin-bottom: 35px;
+    color: #edf0f5;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 9px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn-primary {
+    background: #b48a45;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #967039;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: white;
+    color: #172033;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+/* SEARCH */
+
+.search-box {
+    margin-top: -55px;
+    position: relative;
+    z-index: 5;
+}
+
+.search-inner {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.13);
+}
+
+.search-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+    gap: 12px;
+}
+
+select, input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+.search-button {
+    border: none;
+    padding: 0 25px;
+    border-radius: 8px;
+    background: #17233d;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 90px 0;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+.section-subtitle {
+    color: #697386;
+    margin-top: 10px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(20,30,50,.07);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(20,30,50,.13);
+}
+
+.card-image {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: white;
+    padding: 7px 11px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 22px;
+}
+
+.card-body h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.location {
+    color: #70798a;
+    font-size: 14px;
+}
+
+.price {
+    color: #b48a45;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.features {
+    display: flex;
+    gap: 15px;
+    color: #596273;
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #17233d;
+    color: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 18px;
+    height: 480px;
+    object-fit: cover;
+}
+
+.about p {
+    color: #d6dbe5;
+    margin: 20px 0;
+}
+
+.advantages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.advantage {
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.advantage strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* SERVICES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.service {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 14px;
+    border: 1px solid #eceef2;
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #687286;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #f0f2f5;
+}
+
+.contact-box {
+    background: white;
+    border-radius: 18px;
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #697386;
+    margin-bottom: 25px;
+}
+
+.contact-links {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-links a {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.contact-links a:hover {
+    color: #b48a45;
+}
+
+form {
+    display: grid;
+    gap: 13px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    padding: 14px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    font: inherit;
+}
+
+form button {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    background: #17233d;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0d1527;
+    color: white;
+    padding: 35px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-inner p {
+    color: #aeb6c5;
+    font-size: 14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    nav {
+        display: none;
+    }
+
+    .header-phone {
+        font-size: 14px;
+    }
+
+    .search-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid,
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .search-grid,
+    .cards,
+    .services,
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .section-title {
+        font-size: 31px;
+    }
+
+    .contact-box {
+        padding: 28px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<a href="#" class="logo">Горбачева <span>Недвижимость</span></a>
+
+<nav>
+<a href="#objects">Объекты</a>
+<a href="#about">О компании</a>
+<a href="#services">Услуги</a>
+<a href="#contacts">Контакты</a>
+</nav>
+
+<a class="header-phone" href="tel:+79663284683">
++7 (966) 328-46-83
+</a>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>
+Найдём место,<br>
+которое станет <span>вашим домом</span>
+</h1>
+
+<p>
+Покупка, продажа и аренда недвижимости в Москве
+и Московской области. Профессиональное сопровождение
+сделки от первого обращения до получения ключей.
+</p>
+
+<div class="buttons">
+
+<a href="#objects" class="btn btn-primary">
+Смотреть объекты
+</a>
+
+<a href="#contacts" class="btn btn-light">
+Получить консультацию
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="search-box">
+
+<div class="container">
+
+<div class="search-inner">
+
+<div class="search-title">
+Найти недвижимость
+</div>
+
+<div class="search-grid">
+
+<select>
+<option>Тип недвижимости</option>
+<option>Квартира</option>
+<option>Дом</option>
+<option>Земельный участок</option>
+<option>Коммерческая недвижимость</option>
+</select>
+
+<select>
+<option>Покупка</option>
+<option>Аренда</option>
+</select>
+
+<input type="text" placeholder="Район или город">
+
+<input type="text" placeholder="Цена до">
+
+<button class="search-button" onclick="searchObjects()">
+Найти
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<section id="objects">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2 class="section-title">Избранные объекты</h2>
+<p class="section-subtitle">
+Подборка актуальной недвижимости
+</p>
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80">
+
+<div class="tag">Продажа</div>
+
+</div>
+
+<div class="card-body">
+
+<h3>Современная квартира</h3>
+
+<div class="location">
+Москва, Хамовники
+</div>
+
+<div class="price">
+24 500 000 ₽
+</div>
+
+<div class="features">
+<span>🛏 3 комнаты</span>
+<span>📐 82 м²</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80">
+
+<div class="tag">Продажа</div>
+
+</div>
+
+<div class="card-body">
+
+<h3>Загородный дом</h3>
+
+<div class="location">
+Московская область
+</div>
+
+<div class="price">
+35 900 000 ₽
+</div>
+
+<div class="features">
+<span>🛏 5 комнат</span>
+<span>📐 240 м²</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80">
+
+<div class="tag">Аренда</div>
+
+</div>
+
+<div class="card-body">
+
+<h3>Квартира бизнес-класса</h3>
+
+<div class="location">
+Москва, Сокол
+</div>
+
+<div class="price">
+150 000 ₽ / мес.
+</div>
+
+<div class="features">
+<span>🛏 2 комнаты</span>
+<span>📐 67 м²</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div class="container about-grid">
+
+<img class="about-image"
+src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80">
+
+<div>
+
+<h2 class="section-title">
+Горбачева Недвижимость
+</h2>
+
+<p>
+Помогаем нашим клиентам решать вопросы с недвижимостью
+быстро, безопасно и профессионально.
+</p>
+
+<p>
+Работаем с квартирами, домами, земельными участками
+и коммерческой недвижимостью в Москве и Московской области.
+</p>
+
+<div class="advantages">
+
+<div class="advantage">
+<strong>🔎 Проверка</strong>
+Юридическая проверка объекта
+</div>
+
+<div class="advantage">
+<strong>🤝 Сопровождение</strong>
+Помощь на всех этапах сделки
+</div>
+
+<div class="advantage">
+<strong>🏠 Подбор</strong>
+Подберём недвижимость под вашу задачу
+</div>
+
+<div class="advantage">
+<strong>🔐 Безопасность</strong>
+Минимизируем риски сделки
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<h2 class="section-title">
+Наши услуги
+</h2>
+
+<p class="section-subtitle">
+Полный комплекс услуг в сфере недвижимости
+</p>
+
+</div>
+
+</div>
+
+<div class="services">
+
+<div class="service">
+
+<div class="service-icon">🏠</div>
+
+<h3>Продажа</h3>
+
+<p>
+Поможем выгодно продать квартиру,
+дом или другую недвижимость.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🔑</div>
+
+<h3>Покупка</h3>
+
+<p>
+Подберём подходящие варианты
+и организуем безопасную сделку.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">📋</div>
+
+<h3>Юридическое сопровождение</h3>
+
+<p>
+Проверка документов и сопровождение
+сделки до её завершения.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🏢</div>
+
+<h3>Аренда</h3>
+
+<p>
+Поможем найти жильё или арендатора
+в Москве и Московской области.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contacts" class="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div class="contact-info">
+
+<h2>
+Есть вопросы по недвижимости?
+</h2>
+
+<p>
+Оставьте заявку — свяжемся с вами
+и обсудим вашу задачу.
+</p>
+
+<div class="contact-links">
+
+<a href="tel:+79663284683">
+📞 +7 (966) 328-46-83
+</a>
+
+<a href="tel:+79850139740">
+📞 +7 (985) 013-97-40
+</a>
+
+</div>
+
+</div>
+
+<form id="contactForm">
+
+<input
+type="text"
+placeholder="Ваше имя"
+required
+>
+
+<input
+type="tel"
+placeholder="Номер телефона"
+required
+>
+
+<textarea
+placeholder="Что вас интересует?"
+></textarea>
+
+<button type="submit">
+Получить консультацию
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container footer-inner">
+
+<p>
+© 2026 Горбачева Недвижимость
+</p>
+
+<p>
+Москва и Московская область
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+function searchObjects() {
+    alert("Функция поиска будет подключена на следующем этапе.");
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    alert("Спасибо! Заявка принята. Мы свяжемся с вами.");
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
